@@ -1,0 +1,1 @@
+var json_cinemes_3 = {"type":"FeatureCollection","name":"cinemes_3","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"NAMECINEMA":"YELMOCINES"},"geometry":{"type":"Point","coordinates":[1.238039820144819,41.116843700348447]}}]}
