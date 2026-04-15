@@ -1,0 +1,533 @@
+/* 1. ESTILS GENERALS  */
+
+    * { padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;}
+
+    body {
+        color: #fff;                  /* Color de text blanc per a tot el "body" */
+        background-color: #000;       /* Color de fons negre*/
+        padding: 0 5%;  /* Esto añade un 5% de separación a izquierda y derecha */
+    }
+
+/* 2. TIPOGRAFÍA I TÍTOLS */
+
+    header {
+        background-color:  #b7005c; /* Fons rosa*/
+        text-align: center;  /* Centra els textos del "header" */
+        padding: 29px; /* Espaiat intern vertical */
+    }
+
+   h1 {font-family: 'Playfair Display', serif; /* Font elegant per al títol */
+        font-weight: bold;   /* Lletra negreta */
+        font-style: italic;  /* Lletra en cursiva */ 
+        color: #ffffff; /* Color blanc */
+        text-align: center; /* Centrat del text */
+        margin-top: 40px; /* Marge respecte la part superior */
+        margin-bottom: 10px; /* Marge respecte la part inferior */
+        font-size: 72px; /* Grandària del text */
+        letter-spacing: 1px; /* Espaiat entre lletres */
+    } 
+
+    h2 {
+        font-family: 'Montserrat', sans-serif; 
+        font-weight: bold; /* Lletra negreta */
+        color: #ffffff; /* Color blanc */
+        text-align: center; /* Centrat del subtítol */
+        margin-top: 40px; /* Marge respecte la part superior */
+        margin-bottom: 30px; /* Marge respecte la part inferior */
+        font-size: 30px; /* Grandària del text */
+        letter-spacing: 2px;
+    }                 
+
+    .subtitol {
+        text-align: center; /* Centrat del subtítol */
+        font-size: 19px; /* Mida del text */
+        font-style: italic; /* Lletra cursiva */
+        color: #ffffff; /* Color blanc */
+        margin-bottom: 40px; /* Marge respecte la part inferior */
+        letter-spacing: 3px; /* Espaiat entre lletres */
+        font-weight: bold; /* Text en negreta */
+    }
+
+    .aclariment {
+        font-style: italic; /* Lletra cursiva */
+        color: #626262; /* Color blanc */
+    }
+
+    .peli-descript p {
+        margin-top: 2px !important;    /* Casi sin espacio arriba */
+     margin-bottom: 5px !important; /* Espacio mínimo abajo */
+    }
+
+/* 3. ACCÈS A LES DIFERENTS PÀGINES */
+
+    nav {
+        background-color: #242424; /* Fons negre */
+        padding: 16px; /* Espaiat vertical del menú */
+        top: 0;
+        z-index: 100;
+    }
+
+    /* En ordinador, el menú es horitzontal */
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .nav-links > li > a {
+        color: #fff; /* Text inicial blanc */
+        text-decoration: none; /* Elimina el subratllat */
+        font-weight: bold; /* Text en negreta */
+        text-transform: uppercase; /* Text en majúscules */
+    }
+
+    /* Canvi de color al passar per sobre el ratolí */
+    .nav-links > li > a:hover {
+        color: #ff007f; /* Canvia a rosa en passar el ratolí */
+    }
+
+
+/* 4. MENÚ D'IMATGES SUPERIOR (recomanacions del mes) */
+
+    .recomanacions-imag {
+        display: flex; /* Alineació flexible */
+        justify-content: center; /* Centra el grup d'imatges (horitzontalment */
+        align-items: center; /* Centrat vertical */
+        gap: 20px; /* Separació entre les portades */
+        margin: 20px auto;  /* Marges verticals i centrat horitzontal */
+        padding: 0 10%; /* Marges de seguretat als costats de la pantalla */
+        box-sizing: border-box;  /* Asegura que el padding no estiri el contenidor */
+    }
+
+    .recomanacions-imag a img {
+        width: 220px; /* Amplada fixa igual per a totes */
+        height: 346px; /* Alçada fixa igual per a totes */
+        object-fit: cover; /* Per a que la imatge ompli el buit sense deformar */
+        border: 2px solid #ff007f; /* Vora rosa */
+        border-radius: 8px; /* Cantons arrodonits */
+        transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animació per al zoom */
+    }
+
+    .recomanacions-imag img:hover {
+        transform: scale(1.1);  /* Es fa un 10% més gran al passar el ratolí*/
+        box-shadow: 0 0 20px #ff007f; /* Brillantor rosa */
+        border-color: #ff007f;  /* El contorn canvia a rosa al passar el ratolí per sobre */
+    }
+
+
+/* 5. ETIQUETES D'INFORMACIÓ DE LES PEL·LÍCULES */
+
+    .movie-grid {
+        display: grid; /* Activa el mode graella */
+        grid-template-columns: 1fr; /* Una sola columna vertical */
+        gap: 40px; /* Espai entre els diferents tickets (etiquetes) */
+        margin: 30px auto;/* Centra el conjunt i dona espai a la part superior i inferior */
+        max-width: 1700px;   /* Evita que en pantalles molt grans es deformin massa */
+    }
+
+    .etiquetes {
+        background-color: rgba(17, 17, 17, 0.9); /* Fons gris fosc tipus ticket */
+        display: flex; /* Posa imatge, text i vídeo en fila */
+        align-items: center; /* Centra els elements verticalment dins el ticket */
+        padding: 30px; /* Espaiat intern del ticket */
+        gap: 30px; /* Espai entre els elements interns */
+        position: relative;
+        border: 3px solid #ff007f; /* Vora rosa */
+        border-radius: 10px; /* Vores arrodonides */
+        scroll-margin-top: 400px; /* Centra el ticket a la pantalla en clicar la imatge de dalt vinculada */
+        margin-bottom: 40px; /* Això crea l'espai entre una etiqueta i la següent */
+    }
+
+    /*Imatge de la etiqueta: portada*/
+    .etiquetes img {
+        width: 160px; /* Amplada de la portada al ticket */
+        height: auto; /* Alçada proporcional */
+        border-radius: 8px; /* Vores arrodonides */
+        flex-shrink: 0; /* Evita que la imatge s'aixafi */
+    }
+
+    /* LÍNiA DE PUNTS */
+    .etiquetes::after {
+        content: "";
+        position: absolute;
+        left: 200px; /* Ajusta esto para que quede entre la foto y el texto */
+        top: 20px;
+        bottom: 20px;
+        width: 2px;
+        border-left: 2px dashed rgba(255, 0, 127, 0.6);
+    }
+
+    /* SEPARACIÓ DE PARÀGRAFS */
+    .peli-info .detail {
+        margin-bottom: 20px; /* Separació entre línies */
+        line-height: 100px; /* Espaiat entre el text */
+        color: #ccc; /* Color del text*/
+    }
+
+    .peli-info .btn {
+        display: inline-block;
+        padding: 8px 15px;
+        border: 2px solid #000000;
+        color: #000000;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    /* Estels i textos */
+    .estels-roses { color: #ff007f; } /* color dels estels*/
+    .peli-info .detail { margin-bottom: 10px; color: #ccc; } 
+
+    /* Botó trailer */
+    .trailer { 
+        display: inline-block;
+        padding: 0.8rem 1.6rem;   /* ajusta al gusto */
+        color: #ff008b;           /* rosa texto */
+        text-decoration: none; /* Elimina el subratllat */
+        background: transparent;  /* sin fondo */
+        border: 2px solid #ff008b;/* borde rosa */
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+/* 7. FOOTER i BOTÓ "TORNAR A DALT" */
+
+    footer {
+        text-align: center; /* Centra el text */
+        padding: 20px; /* Espaiat */
+        background-color: #232323; /* Fons negre */
+        color: #dadada; /* Text gris */
+        font-size: 15px; /* Mida de la lletra*/
+        margin-top: 50vh; /* Permet que el darrer ticket es pugui centrar a la pantalla */
+    }
+
+    /* BOTÓ PER TORNAR A DALT (AÑADIR AL FINAL DEL CSS) */
+
+    #backToTop {
+        position: fixed; /* Es queda fixat en la pantalla */
+        bottom: 30px; /* Distància des de sota*/
+        right: 30px; /* Distància desde la dreta */
+    
+        width: 40px; /* Amplada del quadrat que envolta la fletxa */
+        height: 45px; /* Alçada del quadrat que envolta la fletxa */
+        background-color: #9f0250; /* Fons rosa */
+        color: #ffffff; /* Fletxa blanca */
+    
+        display: none; /* S'oculta al principi */
+        align-items: center; /* Centra la fletxa horizontalment */
+        justify-content: center; /* Centra la flectxa verticalment */
+        text-decoration: none; /*Sense subratllar*/
+        font-size: 24px; /* Mida de la fletxa*/
+        font-weight: bold; /* Lletra en negreta*/
+        border-radius: 8px; /* Cantons arrodonits */
+        border: 2px solid #ffffff; /* Vores blanques */
+    
+        z-index: 1000; /* Per a que estigue per sobre de tot */
+    }
+
+    #backToTop:hover {
+        background-color: #ffffff; /* Al passar per sobre el ratlí es torna blanc */
+        color: #c10060; /* La fletxa es torna rosa */
+    }
+
+/* ------------------------------------------------------------------------------------------
+    8. PÀGINA D'INFORMACIÓ GENERAL (COLUMNES DE TEXT I IMATGES) 
+   ------------------------------------------------------------------------------------------*/
+    .etiquetes-info {
+        background-color: rgba(17, 17, 17, 0.9); /* Fons gris fosc tipus ticket */
+        display: flex; /* Posa imatge, text i vídeo en fila */
+        align-items: center; /* Centra els elements verticalment dins el ticket */
+        padding: 30px; /* Espaiat intern del ticket */
+        gap: 30px; /* Espai entre els elements interns */
+        position: relative;
+        border: 3px solid #ff007f; /* Vora rosa */
+        border-radius: 10px; /* Vores arrodonides */
+        scroll-margin-top: 40vh; /* Centra el ticket a la pantalla en clicar la imatge de dalt vinculada */
+        margin-bottom: 40px; /* Això crea l'espai entre una etiqueta i la següent */
+    }
+
+    .títol-etiq {
+        text-align: center; /* Centrat del text */
+        color:#ff4fa7;
+        font-size: 30px; /* Grandària del text */
+        margin-top: 0%;
+    }
+
+    /*TAULA CRITERIS DE VALORACIÓ */
+
+    .valoracio-table {
+        border-collapse: collapse; /* Elimina l'espai buit entre cel·les */
+        margin-top: 25px; /* Separa la taula del text superior */
+        background-color: rgba(255, 255, 255, 0.02); /* Fons molt suau */
+    }
+
+.valoracio-table th, 
+.valoracio-table td {
+    padding: 15px; /* Espai interior per a que el text respiri */
+    text-align: left; /* Alineació a l'esquerra */
+    border-bottom: 1px solid rgba(255, 0, 127, 0.2); /* Línia rosa tènue entre files */
+}
+
+.valoracio-table th {
+    color: #ff007f; /* Capçaleres en color rosa neó */
+    text-transform: uppercase; /* Text en majúscules */
+    font-size: 0.85rem; /* Mida una mica més petita */
+    letter-spacing: 2px; /* Espaiat entre lletres */
+}
+
+.valoracio-table td {
+    font-size: 1rem; /* Mida de text estàndard */
+    line-height: 1.5; /* Separació entre línies de text */
+}
+
+/* Efecte en passar el ratolí per sobre de la fila */
+.valoracio-table tr:hover {
+    background-color: rgba(255, 0, 127, 0.05); /* Brillantor rosa molt suau */
+    transition: background 0.3s ease;
+}
+
+/* Estil específic per a la columna de les estrelles */
+.valoracio-table td.rating {
+    color: #ffcc00; /* Color daurat per a les estrelles */
+    font-size: 1.3rem; /* Mida més gran */
+    width: 160px; /* Amplada fixa per a que les estrelles no es moguin */
+    white-space: nowrap; /* Evita que les estrelles saltin de línia */
+}
+
+/* ------------------------------------------------------------------------------------------
+    9. PÀGINA GALERIA (VISUALITZACIÓ DE LES IMATGES) 
+   ------------------------------------------------------------------------------------------*/
+
+    .fotosgaleria {
+        display: flex; /* Alineació flexible */
+        justify-content: center; /* Centra el grup d'imatges (horitzontalment */
+        align-items: center; /* Centrat vertical */
+        gap: 40px; /* Separació entre les portades */
+        margin: 40px auto;  /* Marges verticals i centrat horitzontal */
+        padding: 0 10%; /* Marges de seguretat als costats de la pantalla */
+        box-sizing: border-box;  /* Asegura que el padding no estiri el contenidor */
+    }
+
+    .fotosgaleria a img {
+        width: 220px; /* Amplada fixa igual per a totes */
+        height: 346px; /* Alçada fixa igual per a totes */
+        object-fit: cover; /* Per a que la imatge ompli el buit sense deformar */
+        border: 2px solid #ff007f; /* Vora rosa */
+        transition: transform 0.3s ease, box-shadow 0.6s ease; /* Animació per al zoom */
+    }
+
+/* ------------------------------------------------------------------------------------------
+    10. PÀGINA DE CONTACTE (FORMULARI INTERACTIU)
+   ------------------------------------------------------------------------------------------*/
+   /* Contenidor principal del formulari */
+    form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Crea 3 columnes iguals */
+        gap: 50px; /* Espai entre les columnes */
+        padding: 30px;
+    }
+
+.etiquetes-personal {
+        background-color: rgba(17, 17, 17, 0.9); /* Fons gris fosc tipus ticket */
+        align-items: center; /* Centra els elements verticalment dins el ticket */
+        padding: 30px; /* Espaiat intern del ticket */
+        gap: 30px; /* Espai entre els elements interns */
+        position: relative;
+        border: 3px solid #ff007f; /* Vora rosa */
+        border-radius: 10px; /* Vores arrodonides */
+        scroll-margin-top: 40vh; /* Centra el ticket a la pantalla en clicar la imatge de dalt vinculada */
+        margin-bottom: 40px; /* Això crea l'espai entre una etiqueta i la següent */
+    }
+
+   h3 {
+    color: #ff53a9;
+    font-size: 25px;
+   }
+
+   .comentaris{color:#757575; font-size: 12px;
+   }
+
+   .negreta{color:#ffffff}
+   .correu{color:#0088ff; font-size: 14px}
+
+   /* Disseny del botó*/
+    .enviar {
+        padding: 8px 16px;          /* Espaiat intern */
+        color: #ff008b;             /* Color del text rosa */
+        background: transparent;    /* Sense color de fons */
+        border: 2px solid #ff008b;  /* Vora rosa de 2 píxels */
+        text-transform: uppercase;  /* Text en majúscules */
+        font-weight: bold;           /* Gruix de la lletra (negreta) */
+        display: inline-block;      /* Per a que el padding es respecti bé */
+    }
+
+    /* Quan l'usuari posa el ratolí a sobre */
+    .enviar:hover {
+        background-color: #ff008b;  /* El fons es torna rosa */
+        color: #ffffff;             /* El text es torna blanc */
+    }
+
+
+/* ------------------------------------------------------------------------------------------
+    11. PÀGINA DE MAPES (FORMULARI INTERACTIU)
+   ------------------------------------------------------------------------------------------*/
+/* Contenidor de cada mapa */
+    
+    #map {
+    height: 500px;  /* Altura fija para que el navegador sepa cuánto espacio reservar */
+    width: 90%;     /* Que ocupe casi todo el ancho */
+    margin: 20px auto; /* Centrado */
+    border: 2px solid #ff007f; /* Para que pegue con tu diseño neón */
+    border-radius: 15px;
+    z-index: 1; /* Evita que otros elementos se pongan encima */
+    }
+
+    .titol-mapa {
+            text-align: center;
+            color: #ff007f;
+            text-transform: uppercase;
+            margin-top: 50px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Rectangle centrat del mapa */
+    .recuadre-mapa {
+        height: 400px; /* Alçada fixa */
+        width: 80%; /* Ample del rectangle */
+        max-width: 800px; /* No massa gran en PC */
+        margin: 20px auto 60px auto; /* Centrat horitzontal */            
+        border: 3px solid #ff007f;
+        border-radius: 15px;
+        overflow: hidden; /* Perquè el mapa no surti de les vores rounded */
+        box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+    }
+
+/* ------------------------------------------------------------------------------------------
+    12. RESPONSIVE DESIGN (ADAPTACIÓ MÒBIL I TABLET)
+   ------------------------------------------------------------------------------------------*/
+
+/* TABLET (Pantalles de fins a 1024px) - PÀGINA D'INICI */
+@media (max-width: 1024px) {
+    .recomanacions-imag {
+        gap: 20px;
+        padding: 0 5%;
+    }
+
+    .recomanacions-imag a img {
+        width: 180px; /* Reduïm una mica la mida en tablet */
+        height: auto;
+    }
+
+    .etiquetes {
+        flex-direction: column; /* En tablets petites, posem la info sota la foto */
+        text-align: center;
+    }
+
+    .etiquetes::after {
+        display: none; /* Eliminem la línia de punts si es posa en vertical */
+    }
+
+    /*----------------------------------PÀGINA GALERIA-----------------------------*/
+
+    .fotosgaleria {
+        grid-template-columns: repeat(3, 1fr); /* Passem a 3 columnes */
+        gap: 15px;
+    }
+    
+    h1 {
+        font-size: 50px; /* Títol una mica més petit - PÀGINA GALERIA */
+    }
+}
+
+/*----------------------------------------------------------------------------------
+ MÒBIL (Pantalles de fins a 768px) 
+ ------------------------------------------------------------------------------------*/
+
+ /* ----------------------------- PÀGINA INICI ---------------------------------- */
+ @media (max-width: 768px) {
+    
+    /* MENÚ D'IMATGES SUPERIOR (recomanacions del mes) */
+    .recomanacions-imag {
+        display: grid; /* Cambiamos Flex por Grid */
+        grid-template-columns: repeat(2, 200px); /* Crea 2 columnas de 280px cada una */
+        justify-content: center; /* Centra la cuadrícula entera en la página */
+        gap: 30px; /* Espacio entre filas y columnas */
+        margin: 40px auto;
+        padding: 0;
+    }
+
+    .recomanacions-imag a {
+        display: block; /* Asegura que el enlace ocupe todo el espacio */
+    }
+
+    .recomanacions-imag a img {
+        width: 100%; /* La imagen se adapta al ancho de la columna del grid (280px) */
+        height: 400px; /* Forzamos una altura fija para que todas sean iguales */
+        object-fit: cover; /* Recorta la imagen si es necesario para que no se deforme */
+        border: 2px solid #ff007f;
+        border-radius: 8px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .recomanacions-imag img:hover {
+        transform: scale(1.05); /* Un zoom más sutil al ser imágenes grandes */
+        box-shadow: 0 0 20px #ff007f;
+    }
+
+    h1 {
+        font-size: 40px; /* Títol més petit per a mòbil */
+    }
+
+    h2 {
+        font-size: 24px; /* Més petit per a mòbil */
+    }
+
+    /* Menú de navegació en vertical per a mòbil */
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Ajust de les etiquetes de pel·lícula */
+    .etiquetes {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .etiquetes img {
+        width: 180px;
+    }
+
+ /* ----------------------------- PÀGINA GALERIA ---------------------------------- */
+
+     /* MENÚ D'IMATGES SUPERIOR (recomanacions del mes) */
+    .fotosgaleria {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnes i 2 files */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .fotosgaleria img {
+        height: 250px; /* Reduïm l'altura perquè no ocupin tota la pantalla */
+    }
+
+    /* El menú de navegació es posa en vertical per comoditat */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .subtitol {
+        font-size: 14px;
+    }
+}

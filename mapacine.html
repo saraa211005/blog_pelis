@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog de Pel·lícules - Mapes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="estil.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+</head>
+
+<body>
+ <!-- Capçalera -->
+    <header>
+        <h1>Cinesa</h1>
+        <p class="subtitol">CINEMES I FILMOTEQUES A PROP TEU</p>
+    </header>
+
+<!-- Menú de selecció (botons de navegació) -->
+    <nav>
+        <ul class="nav-links">
+        <li><a href="inici.html">Inici</a></li>
+        <li><a href="infogeneral.html">Informació</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="mapacine.html">Mapa</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+        </ul>
+    </nav>
+
+   <main>
+        <h2 class="titol-mapa">CINEMES (Tarragona)</h2>
+        <div id="map" class="recuadre-mapa"></div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        function crearMapa(id, lat, lon, text) {
+           
+            let map = L.map(id).setView([lat, lon], 15);
+
+            /*Per carregar les cel·les del mapa*/
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; OpenStreetMap'}).addTo(map);
+
+            /*Marcador Pop-up per a indicar quin cine és aquell*/
+            L.marker([lat, lon]).addTo(map)
+            .bindPopup(text) // Al clicar surt el nom del cinema
+            .openPopup();
+        }
+
+        // Coordenades del cinema (lat, long)
+            crearMapa('map', 41.13962, 1.2173, '<b>OCINE Gavarres</b>');
+    </script>
+
+    <footer>
+        <p> BLOG DE PEL·LÍCULES</p>
+        <p> cinesa@gmail.com</p>
+    </footer>
+    <a href="#" id="backToTop">⬆</a>
+
+    <script>
+    // Codi per a que només surti quan baixes //
+        const btn = document.getElementById("backToTop");
+
+     window.onscroll = function() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            btn.style.display = "flex"; // Surt quan baixes 400px //
+        } else {
+            btn.style.display = "none"; // S'oculta quan estàs a dalt de la pàgina //
+        }
+        };
+    </script>
+
+
+
+</body>
+</html>
