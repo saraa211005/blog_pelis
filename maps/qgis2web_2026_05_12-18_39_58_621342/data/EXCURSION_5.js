@@ -1,0 +1,1 @@
+var json_EXCURSION_5 = {"type":"FeatureCollection","name":"EXCURSION_5","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"fid":"1","LUGAR":"Altafulla international film festival","HTML_POPUP":null},"geometry":{"type":"Point","coordinates":[1.572487982736215,41.191113269894153]}}]}

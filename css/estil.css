@@ -1,14 +1,20 @@
-/* 1. ESTILS GENERALS  */
+/* ==========================================================================
+   1. ESTILS GENERALS 
+   ========================================================================== */
+* { padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;}
 
-    * { padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;}
-
-    body {
-        color: #fff;                  /* Color de text blanc per a tot el "body" */
-        background-color: #000;       /* Color de fons negre*/
-        padding: 0 5%;  /* Esto añade un 5% de separación a izquierda y derecha */
-    }
+body {
+    /* Imatge de fons */
+    background-image: url('cine.jpg'); /* Defineix la imatge de fons */
+    background-size: cover;       /* Ajusta la imatge per cobrir tota la pantalla */
+    background-position: center;  /* Centra la imatge de fons */
+    background-attachment: fixed; /* Per a que no es mogui el fons al baixar */
+    background-repeat: no-repeat; /* Per a que no es dupliqui la imatge en pantalles grans */
+    color: #fff;                  /* Color de text blanc per a tot el "body" */
+    background-color: #000;       /* Color de fons per si la imatge no carrega*/
+}
 
 /* 2. TIPOGRAFÍA I TÍTOLS */
 

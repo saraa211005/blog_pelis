@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Blog de Pel·lícules - Galeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="estil.css">
+</head>
+
+<body>
+ <!-- Capçalera -->
+    <header>
+        <h1>Cinesa</h1>
+        <p class="subtitol">EXPOSICIÓ DE PORTADES</p>
+    </header>
+
+<!-- Menú de selecció (botons de navegació) -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="inici.html">Inici</a></li>
+            <li><a href="infogeneral.html">Informació</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="mapacine.html">Mapa</a></li>
+            <li><a href="contacte.html">Contacte</a></li>
+            <li><a href="widgets_example.html">Contacte</a></li>
+        </ul>
+    </nav>
+
+    <!--AQIXÓ ES BASA EN EL CSS BOOTSTRAP (bootstrap.css), es algo ya predeterminado qu eme tengo que descargar-->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Predicció del temps</h2>
+            <!--MAPA DEL TEMPS-->
+            <iframe src="https://www.meteoblue.com/es/tiempo/mapas/widget/tarragona_espa%c3%b1a_3108288?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=1&extremeForecastIndex=1&geoloc=fixed&tempunit=C&lengthunit=metric&windunit=km%252Fh&zoom=9&autowidth=manu&user_key=20373f48c789bd2a&embed_key=36d3f1e6bc697571&sig=c93b9fdaf70a579c92a3b24241b76d8b3130b2a44f3d6454a2440d85ea7a976c" 
+                    frameborder="0" 
+                    scrolling="NO" 
+                    allowtransparency="true" 
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" 
+                    style="width: 1000px;height: 500px;border: 0;overflow: hidden;"></iframe>
+                <div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/es/tiempo/semana/index" target="_blank" rel="noopener">meteoblue</a></div>
+        </div>
+    </div>
+
+    <!--WIDGET DE CALENDARI-->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Calendari</h2>
+            <!--CALENDARI QUE ENS INDIQUI -->
+            <iframe 
+                src="https://calendar.google.com/calendar/embed?src=319a998e201c40ff08aa7bf6d822833f5f051a8bbf8561e2405123c18555ddb1%40group.calendar.google.com&ctz=Europe%2FMadrid" 
+                style="border: 0" 
+                width="800" 
+                height="600" 
+                frameborder="0" 
+                scrolling="no">
+            </iframe>
+        </div>
+    </div>
+
+    <!--WIDGET FORMULARI-->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Formulari</h2>
+            <!--FORMULARI DE GOOGLE FORMS-->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc8Rciz7GoVRgVw5yjsdCrINiv1IHlkIeoy-4m86mztUqUmNA/viewform?embedded=true" 
+                    width="640" 
+                    height="2069" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Cargando…</iframe>
+        </div>
+    </div>
+
+    <!--FORMULARI LINK BOTÓ; IMAGÍNATELO, NO PUEDO MÁS-->
+     <div class="row">
+        <div class="col-md-12">
+            <h2>Calendari</h2>
+            <!--CALENDARI QUE ENS INDIQUI -->
+            <a href="LINK">
+            <button type="button" class="btn btn-info">APÚNTATE COJONES</button>
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p> BLOG DE PEL·LÍCULES</p>
+        <p> cinesa@gmail.com</p>
+    </footer>
+    <a href="#" id="backToTop">⬆</a>
+
+    <script>
+    // Codi per a que només surti quan baixes //
+        const btn = document.getElementById("backToTop");
+
+     window.onscroll = function() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            btn.style.display = "flex"; // Surt quan baixes 400px //
+        } else {
+            btn.style.display = "none"; // S'oculta quan estàs a dalt de la pàgina //
+        }
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+var json_cinemes_1 = {"type":"FeatureCollection","name":"cinemes_1","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[]}

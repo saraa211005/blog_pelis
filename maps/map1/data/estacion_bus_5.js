@@ -1,0 +1,1 @@
+var json_estacion_bus_5 = {"type":"FeatureCollection","name":"estacion_bus_5","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"fid":"1"},"geometry":{"type":"Point","coordinates":[1.244404945341375,41.118307308220643]}}]}
